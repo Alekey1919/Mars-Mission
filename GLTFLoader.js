@@ -63,6 +63,8 @@ import {
   sRGBEncoding,
 } from "https://unpkg.com/three@0.129.0/build/three.module.js";
 
+// Let's see if now it works
+
 class GLTFLoader extends Loader {
   constructor(manager) {
     super(manager);
