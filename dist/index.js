@@ -147,7 +147,6 @@ const renderer2 = new THREE.WebGLRenderer({
 renderer2.setSize(innerWidth, innerHeight);
 renderer2.setPixelRatio(devicePixelRatio);
 document.querySelector(".canvas2-container").appendChild(renderer2.domElement);
-// document.body.appendChild(renderer2.domElement);
 
 //LIGHT
 
