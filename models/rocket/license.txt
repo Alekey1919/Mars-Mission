@@ -1,0 +1,11 @@
+Model Information:
+* title:	Crew Dragon Falcon 9
+* source:	https://sketchfab.com/3d-models/crew-dragon-falcon-9-c30dd3d60bce45c593af7e25c69638d7
+* author:	MaTte0 (https://sketchfab.com/matteomansion)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Crew Dragon Falcon 9" (https://sketchfab.com/3d-models/crew-dragon-falcon-9-c30dd3d60bce45c593af7e25c69638d7) by MaTte0 (https://sketchfab.com/matteomansion) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
