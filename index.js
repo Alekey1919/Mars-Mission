@@ -1,7 +1,12 @@
-import * as THREE from "../node_modules/three/src/Three.js";
+// import * as THREE from "../node_modules/three/src/Three.js";
+import * as THREE from "https://cdn.skypack.dev/three@0.129";
+
 // import { OrbitControls } from "https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js";
 // import * as dat from "./node_modules/dat.gui/build/dat.gui.min.js";
-import { GLTFLoader } from "../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
+
+// import { GLTFLoader } from "../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
+
+import { GLTFLoader } from "./GLTFLoader.js";
 
 // COUNTDOWN
 
@@ -233,8 +238,6 @@ function finished() {
   document.body.classList.remove("loading-active");
   document.querySelector(".loading-container").style.display = "none";
 }
-
-// scene2.background = new THREE.Color(0x00ff00);
 
 // RESPONSIVE STARSHIP INFO
 
