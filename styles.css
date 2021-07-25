@@ -135,6 +135,7 @@ h1 {
 }
 
 .countdown > div > h1 {
+  font-family: "Raleway", sans-serif;
   font-size: 3rem;
 }
 
@@ -277,6 +278,10 @@ h1 {
   cursor: default;
 }
 
+.point-title {
+  height: 80px;
+}
+
 .map-point:hover > .hidden-point {
   opacity: 1;
 }
@@ -329,6 +334,13 @@ h1 {
   }
 }
 
+@media (max-width: 1313px) {
+  .point-title {
+    position: relative;
+    top: 50px;
+  }
+}
+
 .landing-in-mars-container {
   position: absolute;
   right: 200px;
@@ -376,6 +388,12 @@ h1 {
 }
 
 @media (max-width: 1100px) {
+  /* Point */
+
+  .point-title {
+    top: 0;
+  }
+
   /*  COUNTDOWN */
 
   .countdown {

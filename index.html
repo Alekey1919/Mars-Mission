@@ -2,6 +2,17 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./animations.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>Mars Mission</title>
   </head>
   <body class="loading-active">
@@ -41,14 +52,16 @@
         </div>
         <div class="map-points-container">
           <div class="map-point" id="point1">
-            <p class="point-title">01.<span>p</span>LAUNCH & BOOSTER RETURN</p>
+            <p class="point-title anim0">
+              01.<span>p</span>LAUNCH & BOOSTER RETURN
+            </p>
             <p class="hidden-point" id="hidden1">
               Starship launches with Starship Super Heavy booster. Booster
               separates, returning to Earth.
             </p>
           </div>
           <div class="map-point" id="point2">
-            <p class="point-title">
+            <p class="point-title anim0">
               02.<span>p</span>SHIP ARRIVES IN EARTH ORBIT
             </p>
             <p class="hidden-point" id="hidden2">
@@ -57,7 +70,7 @@
             </p>
           </div>
           <div class="map-point" id="point3">
-            <p class="point-title">
+            <p class="point-title anim0">
               03.<span>p</span>TANKERS REFILL SHIP AND RETURN TO EARTH
             </p>
             <p class="hidden-point" id="hidden3">
@@ -66,7 +79,7 @@
             </p>
           </div>
           <div class="map-point" id="point4">
-            <p class="point-title">
+            <p class="point-title anim0">
               04.<span>p</span>REFILLED SHIP TRAVELS TO MARS
             </p>
             <p class="hidden-point" id="hidden4">
@@ -75,7 +88,7 @@
             </p>
           </div>
           <div class="map-point" id="point5">
-            <p class="point-title">
+            <p class="point-title anim0">
               05.<span>p</span>SHIP REFILLED ON MARS USING LOCAL RESOURCES
             </p>
             <p class="hidden-point" id="hidden5">
@@ -84,7 +97,7 @@
             </p>
           </div>
           <div class="map-point" id="point6">
-            <p class="point-title">
+            <p class="point-title anim0">
               06.<span>p</span>SHIP PERFORMS MARS ASCEND & DIRECT RETURN TO
               EARTH
             </p>
@@ -113,7 +126,7 @@
             remarkably close to that of Earth.
           </p>
           <div class="mars-info-container">
-            <div class="mars-info" id="diameter">
+            <div class="mars-info">
               <p>Diameter</p>
               <p>
                 6791 km
@@ -121,17 +134,17 @@
               </p>
             </div>
             <hr />
-            <div class="mars-info" id="diameter">
+            <div class="mars-info">
               <p>Day Lenght</p>
               <p>24hrs 37 min</p>
             </div>
             <hr />
-            <div class="mars-info" id="diameter">
+            <div class="mars-info">
               <p>Force of Gravity</p>
               <p>38% of Earth</p>
             </div>
             <hr />
-            <div class="mars-info" id="diameter">
+            <div class="mars-info">
               <p>Avg Distance from Earth</p>
               <p>
                 225Mkm
@@ -139,7 +152,7 @@
               </p>
             </div>
             <hr />
-            <div class="mars-info" id="diameter">
+            <div class="mars-info">
               <p>Age</p>
               <p>4.5 billion years</p>
             </div>
@@ -183,15 +196,15 @@
       </section>
       <section id="section-1" class="section">
         <div class="countdown">
-          <div class="container-year">
+          <div class="container-year anim" id="years">
             <h1 class="years-number"></h1>
             <h1 class="years-title">Years</h1>
           </div>
-          <div class="container-month">
+          <div class="container-month anim" id="months">
             <h1 class="months-number"></h1>
             <h1 class="months-title">Months</h1>
           </div>
-          <div class="container-day">
+          <div class="container-day anim" id="days">
             <h1 class="days-number"></h1>
             <h1 class="days-title">Days</h1>
           </div>
@@ -205,7 +218,8 @@
       </section>
     </div>
   </body>
-  <script type="module" src="./index.js"></script>
+  <script type="module" src="./threeConf.js"></script>
+  <script type="module" src="./countdown.js"></script>
   <!-- <script
     type="text/javascript"
     src="../node_modules/dat.gui/build/dat.gui.min.js"
