@@ -8,35 +8,6 @@ import * as THREE from "https://cdn.skypack.dev/three@0.129";
 
 import { GLTFLoader } from "./GLTFLoader.js";
 
-// COUNTDOWN
-
-const countDate = new Date("Nov 23, 2024 00:00:00").getTime();
-const now = new Date().getTime();
-const gap = countDate - now;
-
-const second = 1000;
-const minute = second * 60;
-const hour = minute * 60;
-const day = hour * 24;
-const month = day * 30;
-const year = day * 365;
-
-// Calculating the gap
-
-let textMonthComplete = Math.floor(gap / month);
-let textMonth;
-let textYear = Math.floor(gap / year);
-let textDay = Math.floor(gap / day);
-
-if (textYear >= 1) {
-  textMonth = textMonthComplete - 12 * textYear;
-}
-let textDayReduced = Math.floor(textDay - 30 * textMonthComplete);
-
-document.querySelector(".years-number").innerText = textYear;
-document.querySelector(".months-number").innerText = textMonth;
-document.querySelector(".days-number").innerText = textDayReduced;
-
 // CANVAS 0
 
 // BASIC
