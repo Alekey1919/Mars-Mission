@@ -12,6 +12,13 @@ a {
   padding: 8px 0;
 }
 
+h1,
+h2,
+p,
+button {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .section {
   height: 100vh;
   position: relative;
@@ -117,10 +124,13 @@ h1 {
 
 #section-1 {
   background: #000;
-  background-image: url("./earth.png");
-  background-size: 100vw;
-  background-repeat: no-repeat;
-  background-position: bottom;
+  position: relative;
+}
+
+#earth {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
 }
 
 /* COUNTDOWN */
@@ -249,6 +259,7 @@ h1 {
 #section-4 {
   position: relative;
   background: #000;
+  z-index: 10;
 }
 
 .plan-map-container img {
@@ -291,7 +302,7 @@ h1 {
 }
 
 .hidden-point {
-  /* visibility: hidden; */
+  position: relative;
   font-weight: normal;
   opacity: 0;
   transition: all 0.2s ease-in-out;
@@ -332,12 +343,20 @@ h1 {
   .mars-planet-container img {
     height: unset;
   }
+
+  .map-points-container {
+    width: 90%;
+  }
 }
 
 @media (max-width: 1313px) {
   .point-title {
     position: relative;
     top: 50px;
+  }
+
+  .hidden-point {
+    bottom: -90px;
   }
 }
 
@@ -391,7 +410,11 @@ h1 {
   /* Point */
 
   .point-title {
-    top: 0;
+    top: 50px;
+  }
+
+  .hidden-point {
+    bottom: -40px;
   }
 
   /*  COUNTDOWN */
@@ -401,6 +424,14 @@ h1 {
   }
 
   /* STARSHIP */
+
+  #starship-video {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
 
   .vehicle {
     display: flex;
@@ -419,7 +450,7 @@ h1 {
 
   .description-container {
     opacity: 0;
-    width: 40%;
+    width: 35%;
     transition: opacity 0.3s ease-in-out;
   }
 
@@ -428,8 +459,8 @@ h1 {
   }
 
   .description-container button {
-    margin-left: 20%;
-    font-size: 1.4rem;
+    margin-left: 5%;
+    font-size: 1.2rem;
   }
 
   .description-container p {
@@ -478,13 +509,14 @@ h1 {
     position: absolute;
     left: 0;
     right: 0;
-    top: 10%;
+    top: 0%;
     width: 50%;
     margin: auto;
   }
 
   .plan-map-container img {
     bottom: 25%;
+    width: 95vw;
   }
 
   .map-points-container {
