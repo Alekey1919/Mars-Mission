@@ -16,9 +16,11 @@
     <title>Mars Mission</title>
   </head>
   <body class="loading-active">
+    <!-- Loading -->
     <div class="loading-container">
       <img src="./loading.svg" alt="Loading..." />
     </div>
+    <!-- Main -->
     <div class="container">
       <section id="section-5" class="section">
         <div class="mars-planet-container">
@@ -110,7 +112,7 @@
       </section>
       <section id="section-3" class="section">
         <div class="mars-container">
-          <img src="./mars.png" alt="Mars" />
+          <img src="./mars.webp" alt="Mars" />
         </div>
         <div class="why-mars">
           <h1>WHY MARS?</h1>
@@ -189,12 +191,16 @@
               </button>
             </div>
           </div>
+          <video id="starship-video" autoplay loop>
+            <source src="starship-video.mp4" type="video/mp4" id="video-src" />
+          </video>
           <div class="canvas2-container">
             <canvas class="canvas2"></canvas>
           </div>
         </div>
       </section>
       <section id="section-1" class="section">
+        <img src="./earth.png" alt="Earth" id="earth" />
         <div class="countdown">
           <div class="container-year anim" id="years">
             <h1 class="years-number"></h1>

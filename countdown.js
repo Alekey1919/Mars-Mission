@@ -114,7 +114,6 @@ const callbackPoints = (entries) => {
         entry.target.style.animation = "anim " + pointSpeed + "s";
         pointSpeed += 0.3;
         pointsIntersected++;
-        console.log(entry.target);
       }
     }
   });
@@ -125,11 +124,22 @@ points.forEach((element) => observerPoint.observe(element));
 
 // Parallax
 
-window.addEventListener("scroll", (e) => {
+const marsParallax = document.querySelector(".mars-planet-container");
+const earthParallax = document.querySelector("#earth");
+
+window.addEventListener("scroll", () => {
   if (window.pageYOffset <= window.innerHeight) {
-    const target = document.querySelector(".mars-planet-container");
-    var scrolled = window.pageYOffset;
-    var rate = scrolled * 0.5;
-    target.style.transform = "translate3d(0px, " + rate + "px, 0px)";
+    var rate = window.pageYOffset * 0.5;
+    marsParallax.style.transform = "translate3d(0px, " + rate + "px, 0px)";
+  }
+  if (window.pageYOffset > window.innerHeight) {
+    var scrolled =
+      document.body.scrollHeight - window.pageYOffset - window.innerHeight;
+    if (window.innerWidth <= 1100) {
+      scrolled = scrolled * 0.05;
+    } else {
+      scrolled = scrolled * 0.15;
+    }
+    earthParallax.style.transform = "translate3d(0px, " + scrolled + "px, 0px)";
   }
 });
