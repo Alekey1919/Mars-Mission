@@ -35,28 +35,38 @@ let canvas2Container = document.querySelector(".canvas2-container");
 let animateIsActive;
 let animateMobileIsActive;
 const vid = document.querySelector("#starship-video");
+const canvas0Container = document.querySelector(".section-0-container");
 
 window.addEventListener("resize", () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
+  // canvas0Container.style.width = window.outerWidth + "px";
+  console.log(canvas0Container.style);
 
-  // Update camera
-  camera.aspect = sizes.width / sizes.height;
+  if (screen.height >= 800) {
+    renderer.setSize(window.outerWidth, innerHeight);
+    camera.aspect = window.outerWidth / innerHeight;
+  } else {
+    renderer.setSize(window.outerWidth, 800);
+    camera.aspect = window.outerWidth / 800;
+  }
   camera.updateProjectionMatrix();
-
-  // Update renderer
-  renderer.setSize(sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   if (renderer2 && animateIsActive) {
-    camera2.aspect =
-      canvas2Container.clientWidth / canvas2Container.clientHeight;
+    if (sizes.height >= 800) {
+      camera2.aspect =
+        canvas2Container.clientWidth / canvas2Container.clientHeight;
+      renderer2.setSize(
+        canvas2Container.clientWidth,
+        canvas2Container.clientHeight
+      );
+    } else {
+      camera2.aspect = canvas2Container.clientWidth / 800;
+      renderer2.setSize(canvas2Container.clientWidth, 800);
+    }
     camera2.updateProjectionMatrix();
-    renderer2.setSize(
-      canvas2Container.clientWidth,
-      canvas2Container.clientHeight
-    );
     renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
@@ -81,7 +91,7 @@ window.addEventListener("resize", () => {
       }
     }
     canvas2.style.display = "block";
-    document.querySelector("#starship-video").style.display = "none";
+    vid.style.display = "none";
     cancelAnimationFrame(animationFrameMobile);
     animateMobileIsActive = false;
     if (!animateIsActive) {
@@ -283,8 +293,6 @@ if (window.innerWidth > 1100) {
 } else {
   document.querySelector(".canvas2").style.display = "none";
   vid.style.height = window.innerHeight / 1.2 + "px";
-  vid.loop = true;
-  vid.autoplay = true;
   finished(false);
   animateMobileIsActive = true;
 }
