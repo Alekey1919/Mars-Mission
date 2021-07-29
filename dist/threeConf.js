@@ -35,18 +35,13 @@ let canvas2Container = document.querySelector(".canvas2-container");
 let animateIsActive;
 let animateMobileIsActive;
 const vid = document.querySelector("#starship-video");
-const canvas0Container = document.querySelector(".section-0-container");
+const section0 = document.querySelector("#section-0");
 
 window.addEventListener("resize", () => {
-  // Update sizes
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
-  // canvas0Container.style.width = window.outerWidth + "px";
-  console.log(canvas0Container.style);
-
   if (screen.height >= 800) {
-    renderer.setSize(window.outerWidth, innerHeight);
-    camera.aspect = window.outerWidth / innerHeight;
+    renderer.setSize(window.outerWidth, window.outerHeight);
+    camera.aspect = window.outerWidth / window.outerHeight;
+    console.log(window.outerWidth);
   } else {
     renderer.setSize(window.outerWidth, 800);
     camera.aspect = window.outerWidth / 800;
@@ -55,7 +50,7 @@ window.addEventListener("resize", () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   if (renderer2 && animateIsActive) {
-    if (sizes.height >= 800) {
+    if (window.outerHeight >= 800) {
       camera2.aspect =
         canvas2Container.clientWidth / canvas2Container.clientHeight;
       renderer2.setSize(
@@ -114,8 +109,8 @@ camera.position.z = 6;
 
 // MARS
 
-const marsTexture = new THREE.TextureLoader().load("./mars-texture.png");
-const marsNormalMap = new THREE.TextureLoader().load("./mars-map.jpg");
+const marsTexture = new THREE.TextureLoader().load("./images/mars-texture.png");
+const marsNormalMap = new THREE.TextureLoader().load("./images/mars-map.jpg");
 
 const mars = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),

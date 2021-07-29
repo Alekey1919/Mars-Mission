@@ -1,0 +1,50 @@
+/* SECTION 0 */
+
+#section-0 {
+  position: relative;
+  background-color: #141517;
+  width: 100vw;
+  min-height: 800px;
+}
+
+.section-0-container {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/* SECTION 1 */
+
+#section-1 {
+  background: #000;
+  position: relative;
+}
+
+#earth {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: auto;
+  top: 10%;
+}
+
+.countdown > div > h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+}
+
+.years-number,
+.months-number,
+.days-number {
+  text-align: center;
+}
