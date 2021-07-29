@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./animations.css" />
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- <link rel="stylesheet" href="./css/animations.css" /> -->
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,13 +19,13 @@
   <body class="loading-active">
     <!-- Loading -->
     <div class="loading-container">
-      <img src="./loading.svg" alt="Loading..." />
+      <img src="./images/loading.svg" alt="Loading..." />
     </div>
     <!-- Main -->
     <div class="container">
       <section id="section-5" class="section">
         <div class="mars-planet-container">
-          <img src="./mars.jpg" alt="Mars" />
+          <img src="./images/mars.jpg" alt="Mars" />
         </div>
         <div class="landing-in-mars-container">
           <h1>LANDING ON MARS</h1>
@@ -42,7 +42,7 @@
       </section>
       <section id="section-4" class="section">
         <div class="plan-map-container">
-          <img src="./plan.png" alt="Mars Plan" class="plan-map" />
+          <img src="./images/plan.png" alt="Mars Plan" class="plan-map" />
         </div>
         <div class="to-mars-and-back-container">
           <h1>TO MARS AND BACK</h1>
@@ -113,7 +113,7 @@
       </section>
       <section id="section-3" class="section">
         <div class="mars-container">
-          <img src="./mars.webp" alt="Mars" />
+          <img src="./images/mars.webp" alt="Mars" />
         </div>
         <div class="why-mars">
           <h1>WHY MARS?</h1>
@@ -193,21 +193,19 @@
             </div>
           </div>
           <video
-            src="starship-video.mp4"
+            src="./images/starship-video.mp4"
             id="starship-video"
             muted
             autoplay
             loop
-          >
-            <!-- <source src="starship-video.mp4" type="video/mp4" id="video-src" /> -->
-          </video>
+          ></video>
           <div class="canvas2-container">
             <canvas class="canvas2"></canvas>
           </div>
         </div>
       </section>
       <section id="section-1" class="section">
-        <img src="./earth.png" alt="Earth" id="earth" />
+        <img src="./images/earth.png" alt="Earth" id="earth" />
         <div class="countdown">
           <div class="container-year anim" id="years">
             <h1 class="years-number"></h1>
@@ -233,10 +231,6 @@
   </body>
   <script type="module" src="./threeConf.js"></script>
   <script type="module" src="./countdown.js"></script>
-  <!-- <script
-    type="text/javascript"
-    src="../node_modules/dat.gui/build/dat.gui.min.js"
-  ></script> -->
   <script
     src="https://kit.fontawesome.com/2e7c1f8066.js"
     crossorigin="anonymous"
