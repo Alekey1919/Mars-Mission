@@ -137,7 +137,6 @@ window.addEventListener("scroll", () => {
     if (window.pageYOffset <= window.innerHeight) {
       var rate = window.pageYOffset * 0.5;
       marsParallax.style.transform = "translate3d(0px, " + rate + "px, 0px)";
-      console.log("uioafbh");
     }
   }
   if (window.pageYOffset > window.innerHeight) {
