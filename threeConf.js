@@ -1,11 +1,4 @@
-// import * as THREE from "../node_modules/three/src/Three.js";
 import * as THREE from "https://cdn.skypack.dev/three@0.129";
-
-// import { OrbitControls } from "https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js";
-// import * as dat from "./node_modules/dat.gui/build/dat.gui.min.js";
-
-// import { GLTFLoader } from "../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
-
 import { GLTFLoader } from "./GLTFLoader.js";
 
 // CANVAS 0
@@ -15,7 +8,7 @@ const canvas = document.querySelector(".canvas0");
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   75,
-  innerWidth / innerHeight,
+  window.innerWidth / window.innerHeight,
   0.1,
   1000
 );
@@ -24,24 +17,15 @@ const renderer = new THREE.WebGLRenderer({
   alpha: true,
 });
 
-// SIZES
-
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight,
-};
-
 let canvas2Container = document.querySelector(".canvas2-container");
 let animateIsActive;
 let animateMobileIsActive;
 const vid = document.querySelector("#starship-video");
-const section0 = document.querySelector("#section-0");
 
 window.addEventListener("resize", () => {
   if (screen.height >= 800) {
     renderer.setSize(window.outerWidth, window.outerHeight);
     camera.aspect = window.outerWidth / window.outerHeight;
-    console.log(window.outerWidth);
   } else {
     renderer.setSize(window.outerWidth, 800);
     camera.aspect = window.outerWidth / 800;
@@ -65,6 +49,14 @@ window.addEventListener("resize", () => {
     renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
+  if (renderer2) {
+    if (window.innerWidth <= 1400) {
+      rocket.position.set(3, 3.5, -6.5);
+    } else {
+      rocket.position.set(5, 3.5, -6.5);
+    }
+  }
+
   if (window.innerWidth <= 1100) {
     if (animateIsActive) {
       canvas2.style.display = "none";
@@ -77,8 +69,13 @@ window.addEventListener("resize", () => {
     }
     vid.style.display = "block";
     vid.style.height = window.innerHeight / 1.2 + "px";
+    vid.height = window.innerHeight / 1.2;
     vid.autoplay = true;
     vid.loop = true;
+    if (vid.height >= window.innerWidth * 1.3) {
+      vid.style.width = window.outerWidth + "px";
+      vid.style.height = window.outerheight / 2 + "px";
+    }
   } else {
     if (!animateIsActive) {
       if (!renderer2) {
@@ -96,7 +93,7 @@ window.addEventListener("resize", () => {
   }
 });
 
-renderer.setSize(innerWidth, innerHeight);
+renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(devicePixelRatio);
 document.querySelector(".section-0-container").appendChild(renderer.domElement);
 
@@ -266,7 +263,7 @@ function finished(isOrNot) {
     animateMobile();
   }
   window.scrollTo(0, document.body.scrollHeight);
-  // // history.scrollRestoration = "manual";
+  // history.scrollRestoration = "manual";
   document.body.classList.remove("loading-active");
   document.querySelector(".loading-container").style.display = "none";
 }
@@ -280,6 +277,15 @@ document.querySelector("#icon-button").addEventListener("click", () => {
 
 // INITIALIZATION
 
+const videoResizer = () => {
+  vid.style.height = window.innerHeight / 1.2 + "px";
+  vid.style.height = window.innerHeight / 1.2 + "px";
+  vid.style.height = window.innerHeight / 1.2 + "px";
+  vid.style.height = window.innerHeight / 1.2 + "px";
+  vid.style.height = window.innerHeight / 1.2 + "px";
+  vid.style.height = window.innerHeight / 1.2 + "px";
+};
+
 if (window.innerWidth > 1100) {
   canvas2Init();
   vid.style.display = "none";
@@ -287,7 +293,7 @@ if (window.innerWidth > 1100) {
   vid.loop = false;
 } else {
   document.querySelector(".canvas2").style.display = "none";
-  vid.style.height = window.innerHeight / 1.2 + "px";
+  videoResizer();
   finished(false);
   animateMobileIsActive = true;
 }

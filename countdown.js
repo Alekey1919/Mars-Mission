@@ -128,9 +128,17 @@ const marsParallax = document.querySelector(".mars-planet-container");
 const earthParallax = document.querySelector("#earth");
 
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset <= window.innerHeight) {
-    var rate = window.pageYOffset * 0.5;
-    marsParallax.style.transform = "translate3d(0px, " + rate + "px, 0px)";
+  if (window.innerWidth > 800) {
+    if (window.pageYOffset <= window.innerHeight) {
+      var rate = window.pageYOffset * 0.5;
+      marsParallax.style.transform = "translate3d(0px, " + rate + "px, 0px)";
+    }
+  } else {
+    if (window.pageYOffset <= window.innerHeight) {
+      var rate = window.pageYOffset * 0.5;
+      marsParallax.style.transform = "translate3d(0px, " + rate + "px, 0px)";
+      console.log("uioafbh");
+    }
   }
   if (window.pageYOffset > window.innerHeight) {
     var scrolled =
@@ -142,4 +150,59 @@ window.addEventListener("scroll", () => {
     }
     earthParallax.style.transform = "translate3d(0px, " + scrolled + "px, 0px)";
   }
+});
+
+// Description container moving video
+
+const infoButton = document.querySelector("#icon-button");
+const vide = document.querySelector("#starship-video");
+let infoButtonActive = false;
+infoButton.addEventListener("click", () => {
+  if (!infoButtonActive) {
+    infoButtonActive = true;
+  } else {
+    infoButtonActive = false;
+  }
+
+  if (infoButtonActive) {
+    vide.style.left = -window.innerWidth / 3 + "px";
+    infoButton.style.right = "-15px";
+    infoButton.style.top = "-15px";
+  } else {
+    vide.style.left = "0px";
+    infoButton.style.right = "0px";
+    infoButton.style.top = "0px";
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (infoButtonActive) {
+    vide.style.left = -window.innerWidth / 3 + "px";
+  }
+});
+
+// Carousel
+
+const leftCarousel = document.querySelector("#carousel-left-btn");
+const rightCarousel = document.querySelector("#carousel-right-btn");
+
+leftCarousel.addEventListener("click", () => {
+  document.querySelector("#first-half").style.display = "flex";
+  document.querySelector("#first-half").style.opacity = "1";
+  document.querySelector("#first-half").style.animation = "anim 0.7s ease-out";
+
+  document.querySelector("#second-half").style.opacity = "0";
+  setTimeout(() => {
+    document.querySelector("#second-half").style.display = "none";
+  }, 500);
+});
+
+rightCarousel.addEventListener("click", () => {
+  document.querySelector("#second-half").style.display = "flex";
+  document.querySelector("#second-half").style.opacity = "1";
+  document.querySelector("#second-half").style.animation = "anim 0.7s ease-out";
+  document.querySelector("#first-half").style.opacity = "0";
+  setTimeout(() => {
+    document.querySelector("#first-half").style.display = "none";
+  }, 500);
 });
