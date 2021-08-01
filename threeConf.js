@@ -265,7 +265,7 @@ function finished(isOrNot) {
     animateMobile();
   }
   window.scrollTo(0, document.body.scrollHeight);
-  // history.scrollRestoration = "manual";
+  history.scrollRestoration = "manual";
   document.body.classList.remove("loading-active");
   document.querySelector(".loading-container").style.display = "none";
 }
