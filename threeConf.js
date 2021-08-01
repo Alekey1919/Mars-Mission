@@ -260,6 +260,8 @@ function finished(isOrNot) {
   if (isOrNot) {
     animate();
   } else {
+    vid.style.height = window.innerHeight / 1.2 + "px";
+    vid.height = window.innerHeight / 1.2;
     animateMobile();
   }
   window.scrollTo(0, document.body.scrollHeight);
@@ -278,12 +280,12 @@ document.querySelector("#icon-button").addEventListener("click", () => {
 // INITIALIZATION
 
 const videoResizer = () => {
-  vid.style.height = window.innerHeight / 1.2 + "px";
-  vid.style.height = window.innerHeight / 1.2 + "px";
-  vid.style.height = window.innerHeight / 1.2 + "px";
-  vid.style.height = window.innerHeight / 1.2 + "px";
-  vid.style.height = window.innerHeight / 1.2 + "px";
-  vid.style.height = window.innerHeight / 1.2 + "px";
+  vid.style.height = window.outerHeight / 1.2 + "px";
+  vid.height = window.outerHeight / 1.2;
+  if (vid.height >= window.outerWidth * 1.3) {
+    vid.style.width = window.outerWidth + "px";
+    vid.style.height = window.outerheight / 2 + "px";
+  }
 };
 
 if (window.innerWidth > 1100) {
@@ -293,6 +295,7 @@ if (window.innerWidth > 1100) {
   vid.loop = false;
 } else {
   document.querySelector(".canvas2").style.display = "none";
+  vid.style.display = "block";
   videoResizer();
   finished(false);
   animateMobileIsActive = true;

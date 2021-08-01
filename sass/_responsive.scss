@@ -362,7 +362,7 @@
   }
 
   .point-title {
-    height: 10vw !important;
+    height: 5vw !important;
   }
 
   .plan-map {
@@ -370,7 +370,7 @@
   }
 
   .hidden-point {
-    top: 17vw;
+    top: 10vw;
   }
 
   #first-half,
@@ -382,5 +382,11 @@
     p {
       padding-top: 10px;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .hidden-point {
+    top: 70px !important;
   }
 }
