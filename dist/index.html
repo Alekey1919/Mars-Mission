@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- <link rel="stylesheet" href="./css/animations.css" /> -->
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,8 +12,8 @@
       rel="stylesheet"
     />
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <title>Mars Mission</title>
   </head>
   <body class="loading-active">
@@ -54,60 +54,130 @@
           </p>
         </div>
         <div class="map-points-container">
-          <div class="map-point" id="point1">
+          <div class="map-point">
             <p class="point-title anim0">
-              01.<span>p</span>LAUNCH & BOOSTER RETURN
+              01.<span>LAUNCH & BOOSTER RETURN</span>
             </p>
-            <p class="hidden-point" id="hidden1">
+            <p class="hidden-point">
               Starship launches with Starship Super Heavy booster. Booster
               separates, returning to Earth.
             </p>
           </div>
-          <div class="map-point" id="point2">
+          <div class="map-point">
             <p class="point-title anim0">
-              02.<span>p</span>SHIP ARRIVES IN EARTH ORBIT
+              02.<span>SHIP ARRIVES IN EARTH ORBIT</span>
             </p>
-            <p class="hidden-point" id="hidden2">
+            <p class="hidden-point">
               Starship enters Earths orbit while a refilling tanker launches to
               mate with Starship in orbit.
             </p>
           </div>
-          <div class="map-point" id="point3">
+          <div class="map-point">
             <p class="point-title anim0">
-              03.<span>p</span>TANKERS REFILL SHIP AND RETURN TO EARTH
+              03.<span>TANKERS REFILL SHIP AND RETURN TO EARTH</span>
             </p>
-            <p class="hidden-point" id="hidden3">
+            <p class="hidden-point">
               Tanker ship docks with Starship, refilling Starship and returning
               to Earth.
             </p>
           </div>
-          <div class="map-point" id="point4">
+          <div class="map-point">
             <p class="point-title anim0">
-              04.<span>p</span>REFILLED SHIP TRAVELS TO MARS
+              04.<span>REFILLED SHIP TRAVELS TO MARS</span>
             </p>
-            <p class="hidden-point" id="hidden4">
+            <p class="hidden-point">
               Once Starship has been fully refueled, it will begin its journey
               from Earth orbit, around the Sun and onward to Mars.
             </p>
           </div>
-          <div class="map-point" id="point5">
+          <div class="map-point">
             <p class="point-title anim0">
-              05.<span>p</span>SHIP REFILLED ON MARS USING LOCAL RESOURCES
+              05.<span>SHIP REFILLED ON MARS USING LOCAL RESOURCES</span>
             </p>
-            <p class="hidden-point" id="hidden5">
+            <p class="hidden-point">
               When Starship lands on Mars it will be refueled using Mars local
               resources of H20 and CO2.
             </p>
           </div>
-          <div class="map-point" id="point6">
+          <div class="map-point">
             <p class="point-title anim0">
-              06.<span>p</span>SHIP PERFORMS MARS ASCEND & DIRECT RETURN TO
-              EARTH
+              06.<span>SHIP PERFORMS MARS ASCEND & DIRECT RETURN TO EARTH</span>
             </p>
-            <p class="hidden-point" id="hidden6">
+            <p class="hidden-point">
               When Starship is fully refueled it will begin Mars ascent and
               direct return to Earth.
             </p>
+          </div>
+        </div>
+        <!-- Carousel -->
+        <div class="map-points-container-carousel">
+          <div id="first-half">
+            <div class="map-point">
+              <p class="point-title anim0">
+                01.<span>LAUNCH & BOOSTER RETURN</span>
+              </p>
+              <p class="hidden-point">
+                Starship launches with Starship Super Heavy booster. Booster
+                separates, returning to Earth.
+              </p>
+            </div>
+            <div class="map-point">
+              <p class="point-title anim0">
+                02.<span>SHIP ARRIVES IN EARTH ORBIT</span>
+              </p>
+              <p class="hidden-point">
+                Starship enters Earths orbit while a refilling tanker launches
+                to mate with Starship in orbit.
+              </p>
+            </div>
+            <div class="map-point">
+              <p class="point-title anim0">
+                03.<span>TANKERS REFILL SHIP AND RETURN TO EARTH</span>
+              </p>
+              <p class="hidden-point">
+                Tanker ship docks with Starship, refilling Starship and
+                returning to Earth.
+              </p>
+            </div>
+          </div>
+          <div id="second-half">
+            <div class="map-point">
+              <p class="point-title anim0">
+                04.<span>REFILLED SHIP TRAVELS TO MARS</span>
+              </p>
+              <p class="hidden-point">
+                Once Starship has been fully refueled, it will begin its journey
+                from Earth orbit, around the Sun and onward to Mars.
+              </p>
+            </div>
+            <div class="map-point">
+              <p class="point-title anim0">
+                05.<span>SHIP REFILLED ON MARS USING LOCAL RESOURCES</span>
+              </p>
+              <p class="hidden-point">
+                When Starship lands on Mars it will be refueled using Mars local
+                resources of H20 and CO2.
+              </p>
+            </div>
+            <div class="map-point">
+              <p class="point-title anim0">
+                06.<span
+                  >SHIP PERFORMS MARS ASCEND & DIRECT RETURN TO EARTH</span
+                >
+              </p>
+              <p class="hidden-point">
+                When Starship is fully refueled it will begin Mars ascent and
+                direct return to Earth.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-container">
+            <button id="carousel-left-btn">
+              <i class="fas fa-arrow-circle-left"></i>
+            </button>
+            <button id="carousel-right-btn">
+              <i class="fas fa-arrow-circle-right"></i>
+            </button>
           </div>
         </div>
       </section>
@@ -208,15 +278,15 @@
         <img src="./images/earth.png" alt="Earth" id="earth" />
         <div class="countdown">
           <div class="container-year anim" id="years">
-            <h1 class="years-number"></h1>
+            <h1 class="years-number">.</h1>
             <h1 class="years-title">Years</h1>
           </div>
           <div class="container-month anim" id="months">
-            <h1 class="months-number"></h1>
+            <h1 class="months-number">.</h1>
             <h1 class="months-title">Months</h1>
           </div>
           <div class="container-day anim" id="days">
-            <h1 class="days-number"></h1>
+            <h1 class="days-number">.</h1>
             <h1 class="days-title">Days</h1>
           </div>
         </div>
@@ -228,11 +298,11 @@
         </div>
       </section>
     </div>
+    <script type="module" src="./threeConf.js"></script>
+    <script type="module" src="./countdown.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2e7c1f8066.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script type="module" src="./threeConf.js"></script>
-  <script type="module" src="./countdown.js"></script>
-  <script
-    src="https://kit.fontawesome.com/2e7c1f8066.js"
-    crossorigin="anonymous"
-  ></script>
 </html>
