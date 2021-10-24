@@ -4,14 +4,26 @@ import { GLTFLoader } from "./GLTFLoader.js";
 // CANVAS 0
 
 // BASIC
+
 const canvas = document.querySelector(".canvas0");
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
-);
+let camera;
+if (window.innerWidth < window.innerHeight / 1.6) {
+  camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / (window.innerHeight * 1.2),
+    0.1,
+    1000
+  );
+} else {
+  camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+  );
+}
+
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
   alpha: true,
@@ -275,6 +287,7 @@ function finished(isOrNot) {
 const descriptionContainer = document.querySelector(".description-container");
 document.querySelector("#icon-button").addEventListener("click", () => {
   descriptionContainer.classList.toggle("description-container-active");
+  document.querySelector(".starship-btn").classList.toggle("none");
 });
 
 // INITIALIZATION
@@ -293,6 +306,7 @@ if (window.innerWidth > 1100) {
   vid.style.display = "none";
   vid.autoplay = false;
   vid.loop = false;
+  document.querySelector(".starship-btn").classList.toggle("none");
 } else {
   document.querySelector(".canvas2").style.display = "none";
   vid.style.display = "block";
